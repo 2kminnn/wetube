@@ -16,6 +16,7 @@ const handleHome = (req, res) => res.send("hello from home!!")
 const handleProfile = (req, res) => res.send("You are on my profile")
 
 app.use(cookieParser())
+// 이거 왜 이러지 막대 바
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(helmet())

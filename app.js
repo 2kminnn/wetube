@@ -10,9 +10,10 @@ import userRouter from "./routers/userRouter"
 import videoRouter from "./routers/videoRouter"
 import globalRouter from "./routers/globalRouter"
 import routes from "./routes"
-// express를 실행 시킴
+// express를 실행 시킴.
 const app = express()
 
+app.set('view engine', "pug")
 app.use(cookieParser())
 // 이거 왜 이러지 막대 바
 app.use(bodyParser.json())

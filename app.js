@@ -15,7 +15,7 @@ import routes from "./routes"
 // express를 실행 시킴.
 const app = express()
 
-app.use(helmet())               //보안 관련 미들웨어
+app.use(helmet({contentSecurityPolicy:false}))               //보안 관련 미들웨어
 app.set('view engine', "pug")   // view-engine setting
 app.use(cookieParser())     
 // 이거 왜 이러지 막대 바

@@ -6,22 +6,22 @@ import morgan from "morgan"
 import helmet from "helmet"
 import cookieParser from "cookie-parser"
 import bodyParser from "body-parser"
-import { localsMiddleware } from "./middlewares"
+import {localsMiddleware} from "./middlewares"
 import userRouter from "./routers/userRouter"
 import videoRouter from "./routers/videoRouter"
 import globalRouter from "./routers/globalRouter"
 import routes from "./routes"
+
 // express를 실행 시킴.
 const app = express()
 
-app.use(helmet())
-app.set('view engine', "pug")
-app.use(cookieParser())
+app.use(helmet())               //보안 관련 미들웨어
+app.set('view engine', "pug")   // view-engine setting
+app.use(cookieParser())     
 // 이거 왜 이러지 막대 바
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
-app.use(morgan("dev"))
-
+app.use(morgan("dev"))          // 로그 정보
 
 app.use(localsMiddleware)
 app.use(routes.home, globalRouter)

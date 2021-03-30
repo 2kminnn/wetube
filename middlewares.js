@@ -1,11 +1,9 @@
-// app.use((req,res,next) => {
-
 import routes from "./routes"
 
+// app.use((req,res,next) => {
 // })
 
 // app.use(function(req,res,next){
-
 // })
 
 export const localsMiddleware = (req, res, next) => {

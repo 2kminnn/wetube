@@ -3,6 +3,7 @@
 //- 코드를 캡슐화했다. 이게 mixin을 사용하는 이유이다.(다른 정보, 같은 구조)
 mixin videoBlock(video = {})
     .videoBlock
-        video.videoBlock__thumbnail(src=video.videoFile, controls=true) 
-        h4.videoBlock__title=video.title
-        h6.vidoeBlock__views=video.views
+        a(href=routes.videoDetail(video.id))
+            video.videoBlock__thumbnail(src=video.videoFile, controls=true) 
+            h4.videoBlock__title=video.title
+            h6.vidoeBlock__views=video.views

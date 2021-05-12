@@ -17,6 +17,7 @@ const app = express();
 
 app.use(helmet({ contentSecurityPolicy: false })); //보안 관련 미들웨어
 app.set("view engine", "pug"); // view-engine setting
+app.use("/uploads", express.static("uploads"));
 app.use(cookieParser());
 // 이거 왜 이러지 막대 바
 app.use(bodyParser.json());
